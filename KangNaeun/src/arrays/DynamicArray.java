@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DynamicArray {
-	//½Ã°£º¹Àâµµ : O(N+Q)
-	//°ø°£º¹Àâµµ : O(N)
+	//ì‹œê°„ë³µì¡ë„ : O(N+Q)
+	//ê³µê°„ë³µì¡ë„ : O(N)
 	public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n = sc.nextInt();
