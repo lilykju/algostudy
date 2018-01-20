@@ -3,8 +3,8 @@ package implementation;
 import java.util.Scanner;
 
 public class appleNorange {
-	//½Ã°£º¹Àâµµ : O(A+B)
-	//°ø°£º¹Àâµµ : O(A+B)
+	//ì‹œê°„ë³µì¡ë„ : O(A+B)
+	// : O(A+B)
 	static int[] appleAndOrange(int s, int t, int a, int b, int[] apple, int[] orange) {
         int[] ans= new int[2];
 		int a_s=s-a, a_t=t-a, b_s=s-b, b_t=t-b;
