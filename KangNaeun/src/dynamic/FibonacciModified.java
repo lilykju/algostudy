@@ -5,7 +5,7 @@ import java.math.*;
 
 public class FibonacciModified {
 	//시간복잡도 : O(N)
-	// : O(N)
+	//공간복잡도 : O(N)
 	static BigInteger fibonacciModified(int t1, int t2, int n) {
         BigInteger[] d=new BigInteger[n];
         d[0]=BigInteger.valueOf(t1);
