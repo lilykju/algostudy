@@ -4,8 +4,8 @@ import java.util.Scanner;
 import java.math.*;
 
 public class FibonacciModified {
-	//½Ã°£º¹Àâµµ : O(N)
-	//°ø°£º¹Àâµµ : O(N)
+	//ì‹œê°„ë³µì¡ë„ : O(N)
+	//ê³µê°„ë³µì¡ë„ : O(N)
 	static BigInteger fibonacciModified(int t1, int t2, int n) {
         BigInteger[] d=new BigInteger[n];
         d[0]=BigInteger.valueOf(t1);

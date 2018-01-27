@@ -4,8 +4,8 @@ import java.util.*;
 
 public class GradingStudents {
 
-	//½Ã°£º¹Àâµµ : O(N)
-	//°ø°£º¹Àâµµ : O(N)
+	//ì‹œê°„ë³µì¡ë„ : O(N)
+	// : O(N)
 	static int[] solve(int[] grades){
 		for(int i=0;i<grades.length;i++) {
 			int a=grades[i]%5;
