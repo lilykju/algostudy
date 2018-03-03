@@ -3,12 +3,13 @@ package dynamic;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*
 public class Mandragora {
 	
-	//¸¸¾à ¼ø¼­°¡ °íÁ¤ÀÌ¶ó¸é
+	//ë§Œì•½ ìˆœì„œê°€ ê³ ì •ì´ë¼ë©´
 	static long mandragora(int n, int[] H) {
 		
-		//d[i][j] : i¹øÂ° ¸¸µå¶ó°í¶ó±îÁö, j¹ø ¸Ô¾úÀ» ¶§ PÀÇ ÃÖ´ñ°ª  
+		//d[i][j] : ië²ˆì§¸ ë§Œë“œë¼ê³ ë¼ê¹Œì§€, jë²ˆ ë¨¹ì—ˆì„ ë•Œ Pì˜ ìµœëŒ“ê°’  
 		//d[i][0] : d[i-1][0]+H[i]
 		//d[i][j]=max(d[i-1][j]+H[i]*(j+1),d[i-i][j-1])
 		long[][] d = new long[n][n+1];
@@ -29,7 +30,7 @@ public class Mandragora {
 		
 		return max;
     }
-
+*/
 	
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
