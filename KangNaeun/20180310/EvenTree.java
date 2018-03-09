@@ -15,7 +15,7 @@ public class EvenTree {
 		for(int i=0;i<a[node].size();i++) {
 			int to=a[node].get(i);
 			if(to==from) continue;
-			//ÀÚ¹Ù´Â ¹è¿­ÁÖ¼Ò ³Ñ±è
+			//ìžë°”ëŠ” ë°°ì—´ì£¼ì†Œ 
 			count += recursionTree(d, to, node);
 			d[node]+=d[to];
 		}
