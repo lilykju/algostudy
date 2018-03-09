@@ -8,7 +8,7 @@ public class MaxSubarray {
 		
 		int n=arr.length;
 		int[] d = new int[n];
-		//d[i]= i¹øÂ°±îÁö ÃÖ´ñ°ª
+		//d[i]= ië²ˆì§¸ê¹Œì§€ ìµœëŒ“ê°’
 		d[0]=arr[0];
 		int subarray=d[0];
 		for(int i=1;i<n;i++) {
