@@ -3,7 +3,7 @@ package dynamic;
 import java.util.Scanner;
 
 public class MaxSubarray {
-	
+	int x;
 	static int maxSubarray(int[] arr) {
 		
 		int n=arr.length;
