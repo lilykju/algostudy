@@ -19,12 +19,12 @@ public class fence {
 	}
 	
 	static int solve(int[] f,int left,int right) {
-		//기저: 판자 1개
+	
 		if(left==right) return f[left];
 		
 		int mid = (left+right)/2;
 		
-		//분할
+	
 		int answer = Math.max(solve(f,left,mid), solve(f,mid+1,right));
 		
 		int lo=mid;
