@@ -2,12 +2,12 @@
 
 using namespace std;
 
-int prime[9] = {2,3,5,7,11,13,17,19,23};
+int prime[7] = {2,3,5,7,11,13,17};
 double a_pro, b_pro;
 double cache2[20][20][20]; // max = 18
 
 bool scoreprime(int n){
-	for(int i=0;i<9;++i){
+	for(int i=0;i<7;++i){
 		if(prime[i] == n){
 			return true;
 		}
