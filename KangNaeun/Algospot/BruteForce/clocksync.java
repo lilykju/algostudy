@@ -26,14 +26,13 @@ public class clocksync {
 		}
 	}
 
-	
 	static int solve(int[] clocks, int snum) {
 		if(areAligned(clocks)) return 0;
 		if(snum==SWITCH) return INF;
 		int ret = INF;
 		for(int cnt = 0; cnt< 4; ++cnt) {
 			ret = Math.min(ret, cnt+solve(clocks, snum+1));
-			//4¹øÈ£Ãâ -> ¿ø»óÅÂ
+			//4Â¹Ã¸ÃˆÂ£ÃƒÃ¢ -> Â¿Ã¸Â»Ã³Ã…Ã‚
 			push(clocks, snum);
 		}
 		return ret;
