@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  180303_LilyHw.cpp
+c:\users\seop1\onedrive\바탕 화면\댜닝\알고리즘스터디\알고리즘\180303_lilyhw\180303_lilyhw\180303_lilyhw.cpp(14): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\seop1\onedrive\바탕 화면\댜닝\알고리즘스터디\알고리즘\180303_lilyhw\180303_lilyhw\180303_lilyhw.cpp(18): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  180303_LilyHw.vcxproj -> C:\Users\seop1\OneDrive\바탕 화면\댜닝\알고리즘스터디\알고리즘\180303_LilyHw\Debug\180303_LilyHw.exe
