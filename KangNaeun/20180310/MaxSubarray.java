@@ -3,7 +3,11 @@ package dynamic;
 import java.util.Scanner;
 
 public class MaxSubarray {
+<<<<<<< HEAD
 	int x;
+=======
+	
+>>>>>>> 89d4a3552000a49b6debb94ab08375e3145ad383
 	static int maxSubarray(int[] arr) {
 		
 		int n=arr.length;
