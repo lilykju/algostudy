@@ -40,13 +40,13 @@ public class Main {
             set1.add(sc.nextInt());
         }
 
-        
-        Collections.sort(set1);
-
         for (int i = 0; i < numOfSet2; ++i) {
             set2.add(sc.nextInt());
         }
-        
+
+        sc.close();
+
+        Collections.sort(set1);
         Collections.sort(set2);
 
         int result = 0;
