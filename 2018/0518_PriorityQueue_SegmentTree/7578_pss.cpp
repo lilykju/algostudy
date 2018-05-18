@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ typedef long long ll;
 
 struct FenwickTree {
 	vector<ll> tree;
-	FenwickTree(ll n) : tree(n+1) {}
+	FenwickTree(ll n) : tree(n + 1) {}
 
 	ll sum(ll pos) {
 		++pos;
@@ -22,7 +23,7 @@ struct FenwickTree {
 		}
 		return ret;
 	}
-	
+
 	void add(ll pos, ll val) {
 		++pos;
 		while (pos < tree.size()) {
@@ -35,31 +36,31 @@ struct FenwickTree {
 int main(void) {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-	
-	
-	ll n,m,k;
-	cin >> n >> m >> k;
-	FenwickTree tree(10001);
-	vector<ll> arr(10001);
-	ll in;
-	for (int i = 1; i <= n; ++i) {
-		cin >> in;
-		tree.add(i-1, in);
-		arr[i] = in;
+
+	ll n, m, k;
+	cin >> n;
+	vector<ll> arr1(n);
+	map<ll, ll> B;
+	for (int i = 0; i < n; ++i) {
+		cin >> arr1[i];
+	}
+	ll temp;
+	for (int i = 0; i < n; ++i) {
+		cin >> temp;
+		B[temp] = i;
 	}
 
-	for (int i = 0; i < m + k; ++i) {
-		ll a, b, c;
-		cin >> a >> b >> c;
-		if (a == 1) {
-			tree.add(b-1, c - arr[b]);
-			arr[b] = c;
-		}
-		else {
-			cout << tree.sum(c-1) - tree.sum(b-2) << '\n';
-		}
+	FenwickTree myTree(1000001);
+
+	ll cnt = 0;
+	for (int i = 0; i < n; ++i) {
+		int valA = arr1[i];
+		int idxB = B[valA];
+		cnt += myTree.sum(n) - myTree.sum(idxB);
+		myTree.add(idxB, 1);
 	}
-	
+
+	cout << cnt << endl;
 	
 	return 0;
 }
