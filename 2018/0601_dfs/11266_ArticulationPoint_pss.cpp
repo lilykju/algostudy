@@ -30,6 +30,7 @@ int findCutVertex(int here, bool isRoot) {
 	if (isRoot) isCutVertex[here] = (children >= 2);
 	return ret;
 }
+
 int main(void) {
 	ios_base::sync_with_stdio(false);
 	discovered = vector<int>(10001, -1);

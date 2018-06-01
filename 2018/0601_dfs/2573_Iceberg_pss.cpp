@@ -50,6 +50,7 @@ void printarr(void) {
 		cout << '\n';
 	}
 }
+
 int main(void) {
 	int maxh = 0;
 	cin >> n >> m;
@@ -76,11 +77,11 @@ int main(void) {
 			cout << i << '\n';
 			return 0;
 		}
+		
 		memset(visited, false, sizeof(visited));
 		minus1();
 		//cout << cnt << '\n';
 		//printarr();
-		
 	}
 	cout << 0 << '\n';
 	return 0;
