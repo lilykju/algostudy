@@ -1,0 +1,56 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+struct temp {
+	int x, y, r;
+};
+int parent[100001];
+
+int find(int a) {
+	if (a == parent[a])
+		return a;
+	return parent[a] = find(parent[a]);
+}
+
+void merge(int a, int b) {
+	int pa = find(a);
+	int pb = find(b);
+	if (pa == pb)
+		return;
+	parent[pa] = pb;
+}
+bool comp(temp& A, temp& B) {
+	return A.r < B.r;
+}
+int main() {
+	int N, M;
+	scanf("%d %d", &N, &M);
+	vector<temp> arr(M);
+	for (int i = 1; i <= N; i++) {
+		parent[i] = i;
+	}
+	for (int i = 0; i < M; i++) {
+		scanf("%d %d %d", &arr[i].x, &arr[i].y, &arr[i].r);
+	}
+	sort(arr.begin(), arr.end(), comp);
+	int cnt = 0;
+	int sum = 0;
+	int last = 0;
+	for(int i=0;i<M;i++) {
+
+		int here = arr[i].x;
+		int next = arr[i].y;
+		int cost = arr[i].r;
+		if (find(here) == find(next))
+			continue;
+		merge(find(here), find(next));
+		sum += cost;
+		last = cost;
+		cnt++;
+
+	}
+	printf("%d", sum-last);
+	
+}
