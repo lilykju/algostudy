@@ -13,7 +13,7 @@ public class R494_TreeConstructing {
 		String[] s=br.readLine().split(" ");
 		int n = Integer.parseInt(s[0]);
 		int d = Integer.parseInt(s[1]);
-		int k= Integer.parseInt(s[2]);
+		int k = Integer.parseInt(s[2]);
 		if(n<=d||(k==1&&n>2)) {
 			System.out.println("NO");
 			return;
