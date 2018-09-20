@@ -26,7 +26,6 @@ int f(int d, int cnt1, int cnt2) {
 		f(d + 1, cnt1, cnt2 + 1);
 
 	return ret % mod;
-
 }
 
 int main(void) {
@@ -36,6 +35,4 @@ int main(void) {
 
 	cout << f(0, 0, 0) % mod;
 	return 0;
-
-	
 }
