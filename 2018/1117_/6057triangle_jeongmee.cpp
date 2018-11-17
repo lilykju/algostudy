@@ -1,40 +1,35 @@
 #include <iostream>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+bool cmp(const string &a, const string &b)
+{
+    if (a.length() == b.length())
+        return a < b;
+        
+    return a.length() < b.length();
+}
+
 int main(int argc, char** argv) {
 	
-	int T;
+	int T; // Testcase
 	cin >> T;
+	string w[20000];
 	
-	for(int testcase = 1; testcase<=T; testcase++){
-		
-		int n, m;
-		cin >> n >> m;
-		
-		int ans = 0;
-		
-		int a[51][51] = {0, };
-		
-		for(int i = 0; i < m; i++){
-			int x, y;
-			cin >> x >> y;
-			
-			a[x][y] = 1;
-			a[y][x] = 1;
-		}
-		
-		for(int i = 1; i <= n; i++){
-			for(int j = i+1; j <= n; j++){
-				if(a[i][j] == 1){
-					for(int k = j+1; k <= n; k++){
-						if(a[j][k] == 1 && a[k][i] == 1)
-							ans ++;
-					}
-				}
-			}
-		}
-		
-		cout << "#" << testcase << " " << ans << endl;
+	for(int i = 0; i<T; i++){
+		cin >> w[i];
 	}
+	
+	sort(w, w+T, cmp);
+	
+	for (int i = 0; i < T; i++){
+   		if (w[i] != w[i + 1])
+            cout << w[i]<<'\n';
+	}     
+	
+	return 0;
 }
