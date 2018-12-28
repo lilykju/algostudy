@@ -1,0 +1,77 @@
+#include <iostream>
+#include <cmath>
+#include <cstring>
+
+using namespace std;
+
+struct posit{
+	int x, y;
+};
+
+posit a[11];
+posit h;
+int ans, n;
+int isVisit[11];
+
+int dist(posit a, posit b){
+	
+	int d;
+	d = abs(a.x - b.x) + abs(a.y - b.y);
+	
+	return d;
+}
+
+void dfs(int now, int depth, int res){
+	
+	if(depth == n){
+		
+		int tmp = res + dist(a[now], h);
+		
+		if(ans > tmp)
+			ans = tmp;
+			
+		return ;
+	}
+	
+	if(depth < n){
+		
+		depth++;
+		isVisit[now] = 1;
+		
+		for(int i = 1; i <= n; i++){
+			
+			if(isVisit[i] == 0){
+				dfs(i, depth, res + dist(a[now], a[i]));
+			}
+			
+		}
+		
+		isVisit[now] = 0;
+		depth--;
+	}
+	
+} 
+
+int main(){
+	
+	int tc;
+	cin >> tc;
+	
+	for(int t = 1; t <= tc; t++){
+		
+		ans = 2200; // maximum value
+		memset(isVisit, 0, sizeof(isVisit));
+		
+		cin >> n >> a[0].x >> a[0].y >> h.x >> h.y; 
+		
+		for(int i = 1; i <= n; i++){
+			cin >> a[i].x >> a[i].y;
+		}
+		
+		dfs(0, 0, 0);
+		
+		cout << '#' << t << ' ' << ans << endl;
+	}
+	
+	return 0;
+}
