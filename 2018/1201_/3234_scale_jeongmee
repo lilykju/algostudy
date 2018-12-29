@@ -1,0 +1,94 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+long long int ans;
+int n[9];
+int fac[9];
+int sum;
+int leftSum, rightSum;
+int isVisit[9] = { 0, };
+int N;
+
+inline void countN(int left, int right, int depth, int now) {
+	
+	if (left < right)
+		return ;
+
+	if (depth == N - 1) {
+		ans++;
+
+		return ;
+	}
+
+	if (left >= ceil((double)sum / 2)) {
+		int x = N - depth - 1;
+		
+		ans += (1 << x)*fac[x];
+		
+		return ;
+	}
+ 
+	if (depth < N - 1) {
+
+		for (int i = 0; i < N; i++) {
+
+			if (isVisit[i] == 0) {
+
+				isVisit[i] = 1;
+				countN(left+n[i], right, depth+1, i);
+				isVisit[i] = 0;
+				
+				if (left >= right + n[i]) {
+					isVisit[i] = 1;
+					countN(left, right+n[i],depth+1, i);
+					isVisit[i] = 0;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+int main() {
+
+	int T;
+	cin >> T;
+
+	for (int i = 0; i <= 9; ++i) {
+		if (i == 0 || i == 1) fac[i] = 1;
+		else fac[i] = i * fac[i - 1];
+	}
+
+	for (int tc = 1; tc <= T; tc++) {
+
+		ans = 0;
+		sum = 0;
+		leftSum = 0;
+		rightSum = 0;
+		
+		cin >> N;
+
+		for (int i = 0; i < N; i++) {
+			cin >> n[i];
+			sum += n[i];
+		}
+
+		for (int i = 0; i < N; i++) {
+
+			isVisit[i] = 1;
+
+			countN(leftSum+n[i], rightSum, 0, i);
+
+			isVisit[i] = 0;
+		}
+
+		cout << '#' << tc << ' ' << ans << endl;
+	}
+
+	return 0;
+}
